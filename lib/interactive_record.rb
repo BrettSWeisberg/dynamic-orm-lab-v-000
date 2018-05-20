@@ -61,6 +61,7 @@ def table_name_for_insert
     self.column_names do |columns|
       if DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'") == nil
         DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'")
+    end
 
   end
 
