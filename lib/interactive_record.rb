@@ -62,7 +62,7 @@ def table_name_for_insert
     value = attribute.values.first
     formatted_value = value.class == Fixnum ? value : "'#{value}'"
      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE #{key} = #{value}")
-    binding.pry
+    #binding.pry
   end
 
 end
