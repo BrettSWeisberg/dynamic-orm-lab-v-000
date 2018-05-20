@@ -63,7 +63,7 @@ def table_name_for_insert
       DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{column}' = '#{attribute[:name]}'")
 
 
-  end
+  
   end
 
 
