@@ -59,7 +59,7 @@ def table_name_for_insert
 
   def self.find_by(attribute)
     self.column_names do |columns|
-      if DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ''#{columns}' = '#{attribute}'") == nil
+      if DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'") == nil
         DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'")
 
   end
