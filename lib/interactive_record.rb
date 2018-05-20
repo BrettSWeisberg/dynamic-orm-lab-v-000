@@ -57,9 +57,11 @@ def table_name_for_insert
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(attrbute)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_names} = '#{attrbute}'"
-    DB[:conn].execute(sql)
+  def self.find_by(attribute)
+    self.column_names do |columns|
+      if DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE ''#{columns}' = '#{attribute}'") == nil
+        DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'")
+
   end
 
 
