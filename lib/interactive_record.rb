@@ -60,9 +60,8 @@ def table_name_for_insert
   def self.find_by(attribute)
     self.column_names.each do |columns|
       binding.pry
-       DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'")
-      #  DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'")
-  #  end
+       DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute[:name]}'")
+    
   end
   end
 
