@@ -61,7 +61,7 @@ def table_name_for_insert
     key = attribute.keys[0].to_s
     value = attribute.values.first
      DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{key}' = #{value}")
-    binding.pry
+    #binding.pry
   end
 
 end
