@@ -62,6 +62,4 @@ def table_name_for_insert
       value = attribute[:key]
        DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{key}' = '#{value}')
     end
-
-
 end
