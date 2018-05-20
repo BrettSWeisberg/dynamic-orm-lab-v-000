@@ -20,7 +20,7 @@ class InteractiveRecord
       column_names << column["name"]
     end
     column_names.compact
-    binding.pry
+  
   end
 
 
@@ -58,7 +58,7 @@ def table_name_for_insert
   end
 
   def self.find_by(attrbute)
-    sql = "SELECT * FROM #{self.table_name} WHERE  = '#{id}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{self.column_names} = '#{attrbute}'"
     DB[:conn].execute(sql)
   end
 
