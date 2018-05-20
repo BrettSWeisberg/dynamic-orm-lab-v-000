@@ -58,7 +58,7 @@ def table_name_for_insert
   end
 
   def self.find_by(attribute)
-    self.column_names.map do |columns|
+    self.column_names.each do |columns|
        DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'")
       #  DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE '#{columns}' = '#{attribute}'")
   #  end
