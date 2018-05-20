@@ -21,10 +21,11 @@ class InteractiveRecord
     end
 
     column_names.compact
-    binding.pry
+  
   end
 
   def initizalize
+    binding.pry
     self.column_names.each do |col_name|
     attr_accessor col_name.to_sym
   end
